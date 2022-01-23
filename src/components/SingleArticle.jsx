@@ -14,11 +14,14 @@ const SingleArticle = () => {
     fetchArticle();
   }, []);
 
+  const date = article.published;
+  const newdate = date.split("T");
+
   return (
     <>
       <h1 data-cy="article-title">{article.title}</h1>
-      <h1 data-cy="article-body">{article.teaser}</h1>
-      <h1 data-cy="article-created">{article.published}</h1>
+      <h1 data-cy="article-body">{article.body}</h1>
+      <h1 data-cy="article-created">{newdate[0]}</h1>
     </>
   );
 };

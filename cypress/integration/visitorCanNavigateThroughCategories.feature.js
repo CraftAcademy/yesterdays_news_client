@@ -25,19 +25,6 @@ describe("A user visiting the application can display articles by categories", (
         .should("have.length", 4);
     });
 
-    it("is expected to see teaser teaser", () => {
-      cy.get("[data-cy=article-collection]")
-        .children()
-        .first()
-        .within(() => {
-          cy.get("[data-cy=article-teaser]")
-            .should(
-              "contain.text",
-              "Shocking news, USA and Russia are..."
-            )
-        });
-    });
-
     it("is expected to see politics article title", () => {
       cy.get("[data-cy=article-collection]")
         .children()

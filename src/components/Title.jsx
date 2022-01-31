@@ -1,24 +1,20 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Title = () => {
-  const dispatch = useDispatch();
-  const { i18n, t } = useTranslation();
-  const handleLngChange = (event) => {
-    dispatch({ type: "SET_LANGUAGE", payload: event.target.value });
-  };
+  const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <Typography
       data-cy="title"
       variant="h2"
-      component={Link}
-      to="/"
+      component="div"
+      onClick={() => navigate('/')}
       sx={{
-        flexGrow: 1,
+        paddingLeft: "30px",
         textDecoration: "none",
         color: "black",
         fontFamily: "'PT Serif', serif",
